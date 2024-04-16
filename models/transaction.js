@@ -1,35 +1,35 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Types } from "mongoose";
 
-const transactionSchema = new Schema ({
+const transactionSchema = new Schema({
     userId: {
-        type:ObjectId,
-        required:true
-    },
-
-    title:{
-        type:String,
+        type: Types.ObjectId,
         required: true
     },
 
-    description:{
-        type:String,
+    title: {
+        type: String,
         required: true
     },
 
-    amount:{
+    description: {
+        type: String,
+        required: true
+    },
+
+    amount: {
         type: Number,
         required: true
     },
 
-    type:{
+    type: {
         enum: ["income, expense"],
         required: true
     },
-    date:{
-        type: Date,default:Date.now,
-        required: true
+    date: {
+        type: Date,
+        default: Date.now,
     }
 
 })
 
-export const Transaction = model ("Transaction", transactionSchema, "transaction");
+export const Transaction = model("Transaction", transactionSchema, "transactions");

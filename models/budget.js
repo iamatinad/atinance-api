@@ -1,8 +1,8 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Types } from "mongoose";
 
 const budgetSchema = new Schema({
   userId: {
-    type: ObjectId,
+    type: Types.ObjectId,
     required: true,
   },
 
@@ -24,8 +24,7 @@ const budgetSchema = new Schema({
   date: {
     type: Date,
     default: Date.now,
-    required: true,
   },
 });
 
-export const Budget = model ("Budget", budgetSchema, "budget");
+export const Budget = model("Budget", budgetSchema, "budgets");

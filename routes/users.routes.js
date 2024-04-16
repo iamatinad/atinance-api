@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { Register } from "../controllers/user.controllers.js";
+import { Register } from "../controllers/users.controller.js";
 
 // create router
-const router= Router()
+const router = Router()
 
 // create other routes
 router.post('/register', Register)
