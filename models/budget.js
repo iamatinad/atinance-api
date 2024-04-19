@@ -1,6 +1,7 @@
 import { Schema, model, Types } from "mongoose";
-
+ 
 const budgetSchema = new Schema({
+  
   userId: {
     type: Types.ObjectId,
     required: true,

@@ -14,6 +14,8 @@ export const Register = async (req, res, next) => {
   }
 };
 
+// user login
+
 export const Login = async (req, res, next) => {
   try {
     // User Login
@@ -22,11 +24,12 @@ export const Login = async (req, res, next) => {
     // Check if user exists
     const user = await Users.findOne({
       email,
+      password,
     });
     // return 404 if user not found
     if (!user) {
       return res.status(404).json({
-        message: "",
+        message: "not found",
       });
     } else {
       // Generate access token for user using jsonwebtoken
@@ -44,14 +47,14 @@ export const Logout = (req, res, next) => {
   try {
     // Delete all user access token from the database
   } catch (error) {
-    next(error)
+    next(error);
   }
 };
 
-export const Profile= (req, res, next) =>{
-    try {
-        // Get profile for login user
-    } catch (error) {
-        next(error)
-    }
-}
+export const Profile = (req, res, next) => {
+  try {
+    // Get profile for login user
+  } catch (error) {
+    next(error);
+  }
+};
