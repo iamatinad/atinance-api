@@ -39,7 +39,7 @@ export const deleteTransaction = async (req, res, next) => {
     let deleteOneTransaction = await Transaction.deleteOne({
       _id: req.params.id,
     });
-    res.send(200).json(deleteOneTransaction);
+    res.status(200).json(deleteOneTransaction);
   } catch (error) {
     next(error);
   }
