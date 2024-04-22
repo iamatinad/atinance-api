@@ -26,6 +26,7 @@ app.use("/api/budgets", budgetRoutes);
 // connect to database
 await mongoose.connect(process.env.MONGO_URI);
 
+
 // start the express server
 app.listen(PORT, () => {
   console.log(`atinance-api is running on port:${PORT} `);
